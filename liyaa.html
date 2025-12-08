@@ -765,18 +765,18 @@
                     } 
                 },
 
-                // LEVEL 6: TUMBUKAN TIDAK LENTING (Peluru Tertanam) - SULIT
+                // LEVEL 6: TUMBUKAN TIDAK LENTING (Bola Vertikal) - SULIT
                 { 
                     id: 6, x: 6000, type: 'calc', visual: 'truck', 
-                    question: "Sebuah peluru bermassa 0.1 kg ditembakkan pada balok bermassa 2.4 kg yang digantung dengan seutas tali seperti gambar berikut ini. Jika setelah bertumbukkan peluru tertanam di dalam balok, dan posisi balok mengalami kenaikan sebesar h = 20 cm, maka hitunglah kelajuan peluru saat mengenai balok!", 
+                    question: "Sebuah bola bermassa 0,5 kg dilempar vertikal ke atas dengan kecepatan awal 20 m/s. Bola ini kemudian menumbuk sebuah balok bermassa 2 kg yang dapat bergerak bebas. Setelah tumbukan, bola dan balok bergerak bersama dengan kecepatan yang sama. Jika posisi balok sebelum tumbukan diam, hitunglah seberapa tinggi bola akan naik setelah tumbukan!", 
                     sim: {
                         type: 'image',
                         src: 'https://raw.githubusercontent.com/yuramarvellyn-cmyk/MEDIA-PEMBELAJARAN-ICT/1085da48d3157a05a27ce422f21d4ca7f5b35971/ict%206%20rill.jpg'
                     }, 
                     options: { 
-                        input: { correctValue: 60, tolerance: 1 }, 
-                        feedback: { correct: "Tepat! Gunakan kekekalan momentum + energi.", wrong: "Gunakan: (1) m_peluru·v_peluru = (m_peluru + m_balok)·v_gabung, (2) v_gabung = √(2gh)" }, 
-                        explanation: "v_gabung = √(2·10·0.2) = √4 = 2 m/s. m_peluru·v_peluru = (m_peluru + m_balok)·v_gabung -> 0.1·v = (0.1+2.4)·2 -> 0.1·v = 5 -> v = 50 m/s. (Jika g=10, hasil ≈50-60 m/s)" 
+                        input: { correctValue: 0.8, tolerance: 0.1 }, 
+                        feedback: { correct: "Tepat! Gunakan kekekalan momentum + energi kinetik.", wrong: "Gunakan: (1) m_bola·v_bola = (m_bola + m_balok)·v_gabung, (2) h = v²/(2g)" }, 
+                        explanation: "m_bola·v_bola = (m_bola + m_balok)·v_gabung -> 0.5·20 = 2.5·v_gabung -> v_gabung = 4 m/s. h = v²/(2g) = 16/(2·10) = 0.8 m" 
                     } 
                 },
 
