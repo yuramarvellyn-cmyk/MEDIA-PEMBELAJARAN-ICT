@@ -765,18 +765,18 @@
                     } 
                 },
 
-                // LEVEL 6: TUMBUKAN TIDAK LENTING (Menempel) - SULIT
+                // LEVEL 6: TUMBUKAN TIDAK LENTING (Peluru Tertanam) - SULIT
                 { 
                     id: 6, x: 6000, type: 'calc', visual: 'truck', 
-                    question: "Seorang nelayan naik perahu yang bergerak dengan kecepatan 4 m/s. Massa perahu dan orang masing-masing 200 kg dan 50 kg. Pada suatu saat orang tadi meloncat dari perahu dengan kecepatan 8 m/s searah gerak perahu. Maka berapakah kecepatan perahu sesaat setelah orang tadi meloncat?", 
+                    question: "Sebuah peluru bermassa 0.1 kg ditembakkan pada balok bermassa 2.4 kg yang digantung dengan seutas tali seperti gambar berikut ini. Jika setelah bertumbukkan peluru tertanam di dalam balok, dan posisi balok mengalami kenaikan sebesar h = 20 cm, maka hitunglah kelajuan peluru saat mengenai balok!", 
                     sim: {
                         type: 'image',
-                        src: 'https://raw.githubusercontent.com/yuramarvellyn-cmyk/MEDIA-PEMBELAJARAN-ICT/d85de55f206a3c623db15782dd5e7602edf29d46/soal%206%20ict.jpg'
+                        src: 'https://raw.githubusercontent.com/yuramarvellyn-cmyk/MEDIA-PEMBELAJARAN-ICT/1085da48d3157a05a27ce422f21d4ca7f5b35971/ict%206%20rill.jpg'
                     }, 
                     options: { 
-                        input: { correctValue: 3.33, tolerance: 0.1 }, 
-                        feedback: { correct: "Benar! Gunakan kekekalan momentum.", wrong: "Rumus: (m_perahu + m_orang)·v_awal = m_perahu·v_perahu + m_orang·v_orang" }, 
-                        explanation: "(200+50)·4 = 200·v_p + 50·8 -> 1000 = 200·v_p + 400 -> v_p = 3.33 m/s" 
+                        input: { correctValue: 60, tolerance: 1 }, 
+                        feedback: { correct: "Tepat! Gunakan kekekalan momentum + energi.", wrong: "Gunakan: (1) m_peluru·v_peluru = (m_peluru + m_balok)·v_gabung, (2) v_gabung = √(2gh)" }, 
+                        explanation: "v_gabung = √(2·10·0.2) = √4 = 2 m/s. m_peluru·v_peluru = (m_peluru + m_balok)·v_gabung -> 0.1·v = (0.1+2.4)·2 -> 0.1·v = 5 -> v = 50 m/s. (Jika g=10, hasil ≈50-60 m/s)" 
                     } 
                 },
 
