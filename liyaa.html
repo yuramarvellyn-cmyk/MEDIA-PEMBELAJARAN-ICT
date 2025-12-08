@@ -690,24 +690,30 @@
                 // LEVEL 1: HITUNGAN MOMENTUM DASAR (p = mv) - PALING MUDAH
                 { 
                     id: 1, x: 1000, type: 'calc', visual: 'river', 
-                    question: "Jembatan putus! Mobil bermassa 1.500 kg melaju dengan kecepatan 20 m/s. Hitung momentum mobil tersebut!", 
-                    sim: {}, 
+                    question: "Dua buah bola masing-masing mempunyai massa 2 kg dan 3 kg. Bola pertama bergerak ke utara dengan 4 m/s dan bola kedua ke barat dengan 10 m/s. Berapakah besar momentom total kedua benda tersebut ?",
+                    sim: {
+                        type: 'image',
+                        src: 'https://raw.githubusercontent.com/yuramarvellyn-cmyk/MEDIA-PEMBELAJARAN-ICT/e37a8a85d88b782be6756be0ad058337048ccaed/soal%201%20ict.jpg'
+                    },
                     options: { 
-                        input: { correctValue: 30000, tolerance: 0 }, 
-                        feedback: { correct: "Tepat! P = m.v", wrong: "Rumus: p = massa x kecepatan" }, 
-                        explanation: "p = 1500 kg * 20 m/s = 30.000 kg.m/s" 
+                        input: { correctValue: 31.05, tolerance: 0.1 }, 
+                        feedback: { correct: "Betul — gunakan p = m.v dan gabungkan komponen vektor.", wrong: "Coba lagi — hitung p masing-masing bola lalu gabungkan dengan teorema Pythagoras." }, 
+                        explanation: "p1 = 2 kg * 4 m/s = 8 kg·m/s (utara); p2 = 3 kg * 10 m/s = 30 kg·m/s (barat). |p_total| = sqrt(8^2 + 30^2) ≈ 31.05 kg·m/s."
                     } 
                 },
 
-                // LEVEL 2: HITUNGAN IMPULS DASAR (I = F.dt) - MUDAH
+                // LEVEL 2: HITUNGAN IMPULS DASAR (I = Δp) - MUDAH
                 { 
                     id: 2, x: 2000, type: 'calc', visual: 'cliff', 
-                    question: "Tebing Es! Tahan tubuhmu dengan gaya 200 N selama 5 detik agar tidak jatuh. Berapa IMPULS yang kamu kerjakan?", 
-                    sim: {}, 
+                    question: "Bola bermassa 2 kg bergerak dengan kecepatan 10 m/s menumbuk tembok. Apabila tumbukan bersifat lenting sebagian dengan koefisien restitusi 0,6 maka Impuls yang dialami bola sebesar... N.s.", 
+                    sim: {
+                        type: 'image',
+                        src: 'https://raw.githubusercontent.com/yuramarvellyn-cmyk/MEDIA-PEMBELAJARAN-ICT/e37a8a85d88b782be6756be0ad058337048ccaed/soal%202%20ict.jpg'
+                    },
                     options: { 
-                        input: { correctValue: 1000, tolerance: 0 }, 
-                        feedback: { correct: "Kuat sekali!", wrong: "Rumus: I = Gaya x Waktu" }, 
-                        explanation: "I = 200 N * 5 s = 1000 N.s" 
+                        input: { correctValue: 32, tolerance: 0 }, 
+                        feedback: { correct: "Benar — hitung Δv lalu kalikan massa.", wrong: "Ingat: untuk tembok tetap v_final = -e v_initial." }, 
+                        explanation: "v_f = -0.6 * 10 = -6 m/s; Δv = v_f - v_i = -6 - 10 = -16 m/s; I = m Δv = 2 * (-16) = -32 N.s (besar impuls = 32 N.s)."
                     } 
                 },
 
