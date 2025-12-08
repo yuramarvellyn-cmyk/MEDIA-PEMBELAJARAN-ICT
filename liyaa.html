@@ -720,15 +720,15 @@
                 // LEVEL 3: HITUNGAN GAYA IMPULSIF - MEDIUM-MUDAH
                 { 
                     id: 3, x: 3000, type: 'calc', visual: 'spike', 
-                    question: "Benda bermassa 2 kg jatuh ke lantai dengan kecepatan 10 m/s dan berhenti dalam waktu 0,1 detik. Hitung GAYA rata-rata (N) yang diterima lantai!", 
+                    question: "Sebuah bola bermassa 3 kg jatuh bebas dari ketinggian 20 meter dan mencapai kecepatan 12 m/s saat menyentuh tanah. Setelah menyentuh tanah, bola memantul kembali dengan kecepatan 8 m/s setelah waktu 0,3 detik. Hitunglah gaya rata-rata yang diterima oleh tanah selama bola berhenti dan memantul kembali!", 
                     sim: {}, 
                     options: { 
                         input: { correctValue: 200, tolerance: 5 }, 
                         feedback: { 
-                            correct: "Hebat! F = I / Δt", 
-                            wrong: "Rumus: F = (m . Δv) / Δt" 
+                            correct: "Tepat! Hitung Δv dan gunakan F = m·Δv/Δt", 
+                            wrong: "Rumus: F = m(v_akhir - v_awal) / Δt" 
                         },
-                        explanation: "Impuls (I) = m.Δv = 2.10 = 20. Gaya (F) = I/t = 20/0.1 = 200 N."
+                        explanation: "v_awal = -12 m/s (kebawah); v_akhir = +8 m/s (keatas); Δv = 8 - (-12) = 20 m/s; F = 3 * 20 / 0.3 = 200 N."
                     } 
                 },
 
@@ -768,36 +768,45 @@
                 // LEVEL 6: TUMBUKAN TIDAK LENTING (Menempel) - SULIT
                 { 
                     id: 6, x: 6000, type: 'calc', visual: 'truck', 
-                    question: "Mobil A (2kg, 8m/s) menabrak Truk B (4kg, diam) dan MENEMPEL. Hitung kecepatan akhirnya (v')!", 
-                    sim: {}, 
+                    question: "Seorang nelayan naik perahu yang bergerak dengan kecepatan 4 m/s. Massa perahu dan orang masing-masing 200 kg dan 50 kg. Pada suatu saat orang tadi meloncat dari perahu dengan kecepatan 8 m/s searah gerak perahu. Maka berapakah kecepatan perahu sesaat setelah orang tadi meloncat?", 
+                    sim: {
+                        type: 'image',
+                        src: 'https://raw.githubusercontent.com/yuramarvellyn-cmyk/MEDIA-PEMBELAJARAN-ICT/d85de55f206a3c623db15782dd5e7602edf29d46/soal%206%20ict.jpg'
+                    }, 
                     options: { 
-                        input: { correctValue: 2.67, tolerance: 0.1 }, 
-                        feedback: { correct: "Benar! Mereka bergerak bersama.", wrong: "Rumus: m1v1 + m2v2 = (m1+m2)v'" }, 
-                        explanation: "(2*8) + (4*0) = (2+4)v' -> 16 = 6v' -> v' = 2.67 m/s" 
+                        input: { correctValue: 3.33, tolerance: 0.1 }, 
+                        feedback: { correct: "Benar! Gunakan kekekalan momentum.", wrong: "Rumus: (m_perahu + m_orang)·v_awal = m_perahu·v_perahu + m_orang·v_orang" }, 
+                        explanation: "(200+50)·4 = 200·v_p + 50·8 -> 1000 = 200·v_p + 400 -> v_p = 3.33 m/s" 
                     } 
                 },
 
                 // LEVEL 7: RECOIL / LEDAKAN (Aksi-Reaksi) - SULIT
                 { 
                     id: 7, x: 7000, type: 'calc', visual: 'croc', 
-                    question: "Di atas rakit (20kg) diam. Kamu (50kg) lompat ke depan v=4 m/s. Berapa kecepatan rakit MUNDUR? (tulis angkanya saja)", 
-                    sim: {}, 
+                    question: "Sebuah bola jatuh bebas dari ketinggian 4 m diatas lantai. Jika koefisien restitusi = ½, maka tinggi bola setelah tumbukan pertama adalah ....", 
+                    sim: {
+                        type: 'image',
+                        src: 'https://raw.githubusercontent.com/yuramarvellyn-cmyk/MEDIA-PEMBELAJARAN-ICT/b06badd48158385767ac2a172ad4936921b11d45/soal%207%20ict.jpg'
+                    }, 
                     options: { 
-                        input: { correctValue: 10, tolerance: 0.1 }, 
-                        feedback: { correct: "Cerdas! Aksi-Reaksi.", wrong: "P_awal = 0 -> m1v1 + m2v2 = 0" }, 
-                        explanation: "0 = (50*4) + (20*v2) -> -200 = 20v2 -> v2 = -10 m/s. Kelajuan = 10." 
+                        input: { correctValue: 1, tolerance: 0.1 }, 
+                        feedback: { correct: "Tepat! h_pantul = e² × h_awal", wrong: "Rumus: h' = e² × h -> (1/2)² × 4 = 1/4 × 4 = 1 m" }, 
+                        explanation: "h' = e²·h = (0.5)²·4 = 0.25·4 = 1 m" 
                     } 
                 },
 
                 // LEVEL 8: IMPULS VEKTOR (Memantul Balik) - SANGAT SULIT
                 { 
                     id: 8, x: 8000, type: 'calc', visual: 'wall', 
-                    question: "Bola 0,5 kg menumbuk tembok v=10 m/s, memantul balik v=-10 m/s dalam 0,1 detik. Hitung GAYA rata-ratanya (N)!", 
-                    sim: {}, 
+                    question: "Sebuah bola jayuh dari ketinggian 1 m. Jika bola memantul kembali dengan ketinggian 0.8 m. Hitunglah tinggi pantulan berikutnya!", 
+                    sim: {
+                        type: 'image',
+                        src: 'https://raw.githubusercontent.com/yuramarvellyn-cmyk/MEDIA-PEMBELAJARAN-ICT/b06badd48158385767ac2a172ad4936921b11d45/soal%208%20ict.jpg'
+                    }, 
                     options: { 
-                        input: { correctValue: 100, tolerance: 5 }, 
-                        feedback: { correct: "Luar biasa! Hati-hati dengan tanda minus.", wrong: "F = m(v2 - v1) / t" }, 
-                        explanation: "Δv = -10 - 10 = -20. F = 0.5(-20)/0.1 = -100 N. Besar gaya = 100 N." 
+                        input: { correctValue: 0.64, tolerance: 0.01 }, 
+                        feedback: { correct: "Sempurna! Gunakan rasio koefisien restitusi.", wrong: "Rumus: h_n = e²·h_(n-1) atau e = √(h_n/h_(n-1))" }, 
+                        explanation: "e = √(0.8/1) = √0.8 ≈ 0.894. h_3 = e²·h_2 = 0.8·0.8 = 0.64 m" 
                     } 
                 },
 
