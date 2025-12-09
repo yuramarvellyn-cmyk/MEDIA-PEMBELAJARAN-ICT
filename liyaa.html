@@ -173,6 +173,20 @@
         
         .svg-icon { width: 100%; height: 100%; }
 
+        /* Quiz level number box (centered inside question card) */
+        .quiz-level-box {
+            display: inline-block;
+            margin: 0 auto 0.5rem auto;
+            background: #fbbf24; /* yellow-400 */
+            color: #000;
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: 3px solid #000;
+            font-weight: 900;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+            text-align: center;
+            font-size: 0.95rem;
+        }
         /* Simulation Styles */
         .sim-stage {background:#fff;border:2px solid #ddd;border-radius:6px;padding:8px;display:flex;flex-direction:column;gap:8px;}
         .sim-canvas {background:#eef4fb;border:1px solid #cfdbea;border-radius:4px;width:100%;height:150px;}
@@ -448,9 +462,7 @@
 
             <!-- QUIZ MODAL -->
             <div id="screen-quiz" class="hidden glass-panel w-full max-w-5xl mx-auto p-4 md:p-6 pointer-events-auto relative shadow-2xl" oncontextmenu="return false;">
-                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-black px-6 py-1.5 rounded-full border-2 border-black font-black tracking-wider flex items-center gap-2 z-10 shadow-md text-sm md:text-base">
-                    <span>🚧</span> TANTANGAN <span id="quiz-level-num">1</span>
-                </div>
+                <!-- Quiz header moved inside question card for symmetric layout -->
                 
                 <div id="quiz-content" class="mt-4">
                     <div class="flex flex-col md:flex-row gap-6 items-stretch justify-center">
@@ -463,6 +475,7 @@
                             <!-- KOLOM KANAN: Pertanyaan & Input -->
                             <div class="w-full flex-grow flex flex-col gap-3 justify-center">
                                 <div id="quiz-question-container" class="bg-blue-100 border-2 border-black p-4 rounded-xl text-black hidden shadow-sm">
+                                    <div class="quiz-level-box" aria-hidden="true">TANTANGAN <span id="quiz-level-num">1</span></div>
                                     <p id="quiz-question" class="font-bold text-base md:text-lg leading-snug text-center">Memuat pertanyaan...</p>
                                 </div>
 
