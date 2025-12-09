@@ -2004,7 +2004,8 @@ push ini ke repository<!DOCTYPE html>
             }
             
             // --- NEW: LOG RESULT LENGKAP ---
-            const scoreChange = correct ? (10 + Math.floor(Math.max(0, 15 - Math.round((Date.now() - state.quizStartTime)/1000)))) : -5;
+            // Scoring rule: +10 for correct, -5 for incorrect
+            const scoreChange = correct ? 10 : -5;
             state.levelResults.push({
                 level: state.currentLevel,
                 question: cp.question,
