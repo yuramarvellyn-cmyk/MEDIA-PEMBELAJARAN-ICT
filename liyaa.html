@@ -2085,7 +2085,7 @@ push ini ke repository<!DOCTYPE html>
                 // Reset classes
                 p.classList.remove('locked', 'completed', 'current');
                 
-                let t = (lvl===10)?'🏁':lvl; 
+                let t = (lvl===6)?'🏁':lvl; 
                 let l = '';
                 
                 if (lvl < state.maxLevel) { 
@@ -2100,7 +2100,7 @@ push ini ke repository<!DOCTYPE html>
                 }
                 else { 
                     p.classList.add('locked'); 
-                    if(lvl!==10){t='🔒';} else{l='Finish';} 
+                    if(lvl!==6){t='🔒';} else{l='Finish';} 
                 }
                 
                 p.innerHTML = `${t}${l?`<span class="map-pin-label">${l}</span>`:''}`;
