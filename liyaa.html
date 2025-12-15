@@ -342,7 +342,7 @@ push ini ke repository<!DOCTYPE html>
             <div id="screen-map" class="hidden glass-panel p-4 text-center w-full max-w-2xl mx-auto pointer-events-auto">
                 <h1 class="text-2xl font-black text-blue-600 mb-2 tracking-tighter border-b-4 border-black inline-block px-4">PETA KOTA</h1>
                 <p class="text-sm font-bold text-gray-700 mb-4 bg-yellow-100 border border-black p-2 rounded-lg inline-block shadow-sm">
-                    Selesaikan 9 tantangan di peta untuk mencapai garis FINISH!
+                    Selesaikan 5 tantangan di peta untuk mencapai garis FINISH!
                 </p>
                 
                 <div id="map-board">
@@ -415,11 +415,7 @@ push ini ke repository<!DOCTYPE html>
                     <div class="map-pin locked" style="left: 350px; top: 250px;" onclick="selectLevel(3)">3</div>
                     <div class="map-pin locked" style="left: 500px; top: 250px;" onclick="selectLevel(4)">4</div>
                     <div class="map-pin locked" style="left: 550px; top: 160px;" onclick="selectLevel(5)">5</div>
-                    <div class="map-pin locked" style="left: 400px; top: 130px;" onclick="selectLevel(6)">6</div>
-                    <div class="map-pin locked" style="left: 250px; top: 130px;" onclick="selectLevel(7)">7</div>
-                    <div class="map-pin locked" style="left: 100px; top: 130px;" onclick="selectLevel(8)">8</div>
-                    <div class="map-pin locked" style="left: 250px; top: 30px;" onclick="selectLevel(9)">9</div>
-                    <div class="map-pin finish locked" style="left: 550px; top: 30px;" onclick="selectLevel(10)">🏁</div>
+                    <div class="map-pin finish locked" style="left: 400px; top: 30px;" onclick="selectLevel(6)">🏁</div>
                 </div>
             </div>
 
@@ -804,68 +800,8 @@ push ini ke repository<!DOCTYPE html>
                     } 
                 },
 
-                // LEVEL 6: TUMBUKAN TIDAK LENTING (Bola Vertikal) - SULIT
-                { 
-                    id: 6, x: 6000, type: 'calc', visual: 'truck', 
-                    question: "Sebuah bola bermassa 0,5 kg dilempar vertikal ke atas dengan kecepatan awal 20 m/s. Bola ini kemudian menumbuk sebuah balok bermassa 2 kg yang dapat bergerak bebas. Setelah tumbukan, bola dan balok bergerak bersama dengan kecepatan yang sama. Jika posisi balok sebelum tumbukan diam, hitunglah seberapa tinggi bola akan naik setelah tumbukan!", 
-                    sim: {}, 
-                    options: { 
-                        input: { correctValue: 0.8, tolerance: 0.1 }, 
-                        feedback: { correct: "Tepat! Gunakan kekekalan momentum + energi kinetik.", wrong: "Gunakan: (1) m_bola·v_bola = (m_bola + m_balok)·v_gabung, (2) h = v²/(2g)" }, 
-                        explanation: "m_bola·v_bola = (m_bola + m_balok)·v_gabung -> 0.5·20 = 2.5·v_gabung -> v_gabung = 4 m/s. h = v²/(2g) = 16/(2·10) = 0.8 m" 
-                    } 
-                },
-
-                // LEVEL 7: RECOIL / LEDAKAN (Aksi-Reaksi) - SULIT
-                { 
-                    id: 7, x: 7000, type: 'calc', visual: 'croc', 
-                    question: "Sebuah bola jatuh bebas dari ketinggian 4 m diatas lantai. Jika koefisien restitusi = ½, maka tinggi bola setelah tumbukan pertama adalah ....", 
-                    sim: {
-                        type: 'image',
-                        src: 'https://raw.githubusercontent.com/yuramarvellyn-cmyk/MEDIA-PEMBELAJARAN-ICT/b06badd48158385767ac2a172ad4936921b11d45/soal%207%20ict.jpg'
-                    }, 
-                    options: { 
-                        input: { correctValue: 1, tolerance: 0.1 }, 
-                        feedback: { correct: "Tepat! h_pantul = e² × h_awal", wrong: "Rumus: h' = e² × h -> (1/2)² × 4 = 1/4 × 4 = 1 m" }, 
-                        explanation: "h' = e²·h = (0.5)²·4 = 0.25·4 = 1 m" 
-                    } 
-                },
-
-                // LEVEL 8: IMPULS VEKTOR (Memantul Balik) - SANGAT SULIT
-                { 
-                    id: 8, x: 8000, type: 'calc', visual: 'wall', 
-                    question: "Sebuah bola jayuh dari ketinggian 1 m. Jika bola memantul kembali dengan ketinggian 0.8 m. Hitunglah tinggi pantulan berikutnya!", 
-                    sim: {
-                        type: 'image',
-                        src: 'https://raw.githubusercontent.com/yuramarvellyn-cmyk/MEDIA-PEMBELAJARAN-ICT/b06badd48158385767ac2a172ad4936921b11d45/soal%208%20ict.jpg'
-                    }, 
-                    options: { 
-                        input: { correctValue: 0.64, tolerance: 0.01 }, 
-                        feedback: { correct: "Sempurna! Gunakan rasio koefisien restitusi.", wrong: "Rumus: h_n = e²·h_(n-1) atau e = √(h_n/h_(n-1))" }, 
-                        explanation: "e = √(0.8/1) = √0.8 ≈ 0.894. h_3 = e²·h_2 = 0.8·0.8 = 0.64 m" 
-                    } 
-                },
-
-                // LEVEL 9: TUMBUKAN LENTING SEMPURNA (Simulasi Kompleks) - PALING SULIT
-                // Menggunakan visual Bumper Car karena relevan dengan lenting
-                { 
-                    id: 9, x: 9000, type: 'calc-multi', visual: 'bumper', 
-                    question: "Arena Bumper Car! Atur simulasi di samping dan hitung kecepatan akhir (v1' dan v2') untuk Tumbukan Lenting Sempurna.", 
-                    sim: { type: 'q1-momentum-interactive' }, 
-                    options: { 
-                        inputs: [
-                            { id: 'ans-v1', label: "Kecepatan Akhir Benda 1 (v1')", unit: "m/s" }, 
-                            { id: 'ans-v2', label: "Kecepatan Akhir Benda 2 (v2')", unit: "m/s" }
-                        ], 
-                        feedback: { 
-                            correct: "Sempurna! Kamu telah menaklukkan materi Momentum!", 
-                            wrong: "Petunjuk Rumus Tumbukan Lenting Sempurna: v1' = ((m1-m2)v1 + 2m2v2) / (m1+m2) dan v2' = ((m2-m1)v2 + 2m1v1) / (m1+m2)" 
-                        } 
-                    } 
-                },
-                
                 // FINISH
-                { id: 10, x: 10000, type: 'finish', visual: 'gate' }
+                { id: 6, x: 6000, type: 'finish', visual: 'gate' }
             ],
             currentCheckpoint: null
         };
