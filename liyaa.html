@@ -863,9 +863,27 @@ push ini ke repository<!DOCTYPE html>
                         } 
                     } 
                 },
+
+                // LEVEL 10: KONSERVASI MOMENTUM 3D - ULTIMATE CHALLENGE
+                { 
+                    id: 10, x: 10000, type: 'calc', visual: 'cannon', 
+                    question: "Peluru bermassa 0,05 kg ditembakkan dari senapan bermassa 4 kg dengan kecepatan 400 m/s. Berapa kecepatan recoil senapan tersebut? (m/s)", 
+                    sim: {
+                        type: 'image',
+                        src: 'https://raw.githubusercontent.com/yuramarvellyn-cmyk/MEDIA-PEMBELAJARAN-ICT/refs/heads/main/assets/cannon.jpg'
+                    }, 
+                    options: { 
+                        input: { correctValue: 5, tolerance: 0.2 }, 
+                        feedback: { 
+                            correct: "Luar biasa! Momentum terjaga dalam sistem terisolasi!", 
+                            wrong: "Gunakan Hukum Kekekalan Momentum: m_peluru × v_peluru + m_senapan × v_senapan = 0" 
+                        }, 
+                        explanation: "m_peluru × v_peluru = -m_senapan × v_senapan. 0.05 × 400 = -4 × v_senapan. v_senapan = -5 m/s (mundur)."
+                    } 
+                },
                 
                 // FINISH
-                { id: 10, x: 10000, type: 'finish', visual: 'gate' }
+                { id: 11, x: 11000, type: 'finish', visual: 'gate' }
             ],
             currentCheckpoint: null
         };
@@ -1484,6 +1502,30 @@ push ini ke repository<!DOCTYPE html>
                         // TEKS DI TENGAH
                         ctx.fillStyle = 'white'; ctx.shadowBlur=4;
                         ctx.fillText("PEGAS", 0, 5);
+
+                    } else if (g.visual === 'cannon') {
+                        // VISUAL: MERIAM (RECOIL CHALLENGE)
+                        ctx.fillStyle = '#333333'; ctx.shadowBlur=0;
+                        // Basis meriam
+                        ctx.beginPath(); ctx.arc(0, 20, 35, 0, Math.PI*2); ctx.fill();
+                        ctx.strokeStyle = '#1a1a1a'; ctx.lineWidth = 2; ctx.stroke();
+                        // Laras meriam
+                        ctx.save(); ctx.rotate(-0.4);
+                        ctx.fillStyle = '#2d2d2d'; ctx.fillRect(-8, -60, 16, 60);
+                        ctx.strokeStyle = '#1a1a1a'; ctx.lineWidth = 2; ctx.strokeRect(-8, -60, 16, 60);
+                        // Api di ujung laras
+                        ctx.fillStyle = '#ff6b35'; ctx.beginPath(); ctx.arc(0, -65, 12, 0, Math.PI*2); ctx.fill();
+                        ctx.fillStyle = '#ffa500'; ctx.beginPath(); ctx.arc(0, -65, 8, 0, Math.PI*2); ctx.fill();
+                        ctx.restore();
+                        // Roda meriam
+                        ctx.fillStyle = '#1a1a1a'; ctx.beginPath(); ctx.arc(-25, 50, 15, 0, Math.PI*2); ctx.fill();
+                        ctx.beginPath(); ctx.arc(25, 50, 15, 0, Math.PI*2); ctx.fill();
+                        ctx.strokeStyle = '#000000'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(-25, 50, 15, 0, Math.PI*2); ctx.stroke();
+                        ctx.beginPath(); ctx.arc(25, 50, 15, 0, Math.PI*2); ctx.stroke();
+                        
+                        // TEKS DI TENGAH
+                        ctx.fillStyle = 'white'; ctx.shadowBlur=4; ctx.font = 'bold 16px Fredoka';
+                        ctx.fillText("MERIAM", 0, 5);
 
                     } else {
                         ctx.fillStyle = '#ef4444'; ctx.shadowBlur=0;
