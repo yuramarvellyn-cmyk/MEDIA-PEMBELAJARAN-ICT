@@ -342,7 +342,7 @@ push ini ke repository<!DOCTYPE html>
             <div id="screen-map" class="hidden glass-panel p-4 text-center w-full max-w-2xl mx-auto pointer-events-auto">
                 <h1 class="text-2xl font-black text-blue-600 mb-2 tracking-tighter border-b-4 border-black inline-block px-4">PETA KOTA</h1>
                 <p class="text-sm font-bold text-gray-700 mb-4 bg-yellow-100 border border-black p-2 rounded-lg inline-block shadow-sm">
-                    Selesaikan 9 tantangan di peta untuk mencapai garis FINISH!
+                    Selesaikan 10 tantangan di peta untuk mencapai garis FINISH!
                 </p>
                 
                 <div id="map-board">
@@ -419,7 +419,8 @@ push ini ke repository<!DOCTYPE html>
                     <div class="map-pin locked" style="left: 250px; top: 130px;" onclick="selectLevel(7)">7</div>
                     <div class="map-pin locked" style="left: 100px; top: 130px;" onclick="selectLevel(8)">8</div>
                     <div class="map-pin locked" style="left: 250px; top: 30px;" onclick="selectLevel(9)">9</div>
-                    <div class="map-pin finish locked" style="left: 550px; top: 30px;" onclick="selectLevel(10)">🏁</div>
+                    <div class="map-pin locked" style="left: 400px; top: 30px;" onclick="selectLevel(10)">10</div>
+                    <div class="map-pin finish locked" style="left: 550px; top: 30px;" onclick="selectLevel(11)">🏁</div>
                 </div>
             </div>
 
@@ -2191,7 +2192,7 @@ push ini ke repository<!DOCTYPE html>
                 // Reset classes
                 p.classList.remove('locked', 'completed', 'current');
                 
-                let t = (lvl===10)?'🏁':lvl; 
+                let t = (lvl===11)?'🏁':lvl; 
                 let l = '';
                 
                 if (lvl < state.maxLevel) { 
@@ -2206,7 +2207,7 @@ push ini ke repository<!DOCTYPE html>
                 }
                 else { 
                     p.classList.add('locked'); 
-                    if(lvl!==10){t='🔒';} else{l='Finish';} 
+                    if(lvl!==11){t='🔒';} else{l='Finish';} 
                 }
                 
                 p.innerHTML = `${t}${l?`<span class="map-pin-label">${l}</span>`:''}`;
